@@ -1,7 +1,8 @@
-import { Box, Button, Center, Spinner } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Spinner } from "@chakra-ui/react";
 import React from "react";
 import { TableData } from "./components/Table";
 import { useData } from "./context/DataContext";
+import { downloadData } from "./services/data-service";
 
 export default function Home() {
   const dataContext = useData();
@@ -23,10 +24,29 @@ export default function Home() {
         </Center>
       )}
       {!dataContext.loadingView && (
-        <Center w={"100vw"} h={"100vh"} bg={"gray.100"} flexDirection="column">
-          <Box>
+        <Center
+          // border="1px"
+          w={"100vw"}
+          h={"100vh"}
+          bg={"gray.100"}
+          flexDirection="column"
+        >
+          <Flex
+            alignItems={"flex-end"}
+            flexDirection="column"
+            gap="1rem"
+            overflow={"hidden"}
+            // border="1px"
+          >
+            <Button
+              colorScheme={"green"}
+              size={"sm"}
+              onClick={() => downloadData(dataContext.currentPage)}
+            >
+              Descargar CSV
+            </Button>
             <TableData data={dataContext.data} />
-          </Box>
+          </Flex>
           <Center>
             <Button
               onClick={() => handlePage(-1)}
