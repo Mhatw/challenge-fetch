@@ -16,8 +16,8 @@ export const DataProvider = ({ children }) => {
     console.log("handleData");
     try {
       const response = await getData(page);
+      response.results.sort((a, b) => a.dob.age - b.dob.age);
       setData(response.results);
-      console.log(response.results);
     } catch (error) {
       console.log(error);
       toast({
