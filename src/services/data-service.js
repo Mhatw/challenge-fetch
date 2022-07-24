@@ -5,12 +5,10 @@ export async function getData(page, fields) {
   const response = await fetch(
     `${BASE_URL}?page=${page || 1}&results=5&${
       fields || "inc=name,dob,gender,email,nat,picture"
-    }`,
+    }&seed=abc`,
     options
   );
   const data = await response.json();
 
   return data;
-
-  // return response.data;
 }
