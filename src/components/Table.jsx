@@ -9,6 +9,7 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import React from "react";
+import { useData } from "../context/DataContext";
 
 export function TableData({ data }) {
   return (
@@ -27,7 +28,7 @@ export function TableData({ data }) {
         </Thead>
         <Tbody>
           {data.map((item) => (
-            <Tr key={item.id}>
+            <Tr key={item.name.first}>
               <Field>{item.name.first}</Field>
               <Field>{item.name.last}</Field>
               <Field>{item.dob.age}</Field>
@@ -49,11 +50,12 @@ export function TableData({ data }) {
 }
 
 function Field({ children, isAvatar }) {
+  const dataContext = useData();
   return (
     <Th fontWeight="400">
       <Skeleton
         borderRadius={isAvatar ? "50%" : "0.2rem"}
-        isLoaded={true}
+        isLoaded={!dataContext.loading}
         startColor="gray.100"
         endColor="gray.300"
       >
