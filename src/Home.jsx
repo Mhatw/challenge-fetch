@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Spinner } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Hide, Spinner } from "@chakra-ui/react";
 import Footer from "./components/Footer";
 import { TableData } from "./components/Table";
 import { useData } from "./context/DataContext";
@@ -24,11 +24,18 @@ export default function Home() {
         </Center>
       )}
       {!dataContext.loadingView && (
-        <Center w={"100vw"} h={"100vh"} bg={"gray.100"} flexDirection="column">
+        <Flex
+          w={"100vw"}
+          h={"100vh"}
+          bg={"gray.100"}
+          flexDirection="column"
+          alignItems="center"
+        >
           <Flex
             alignItems={"flex-end"}
             flexDirection="column"
             overflow={"hidden"}
+            mt={["3rem", "5rem", "8rem", "10rem"]}
           >
             <Button
               colorScheme={"green"}
@@ -61,8 +68,10 @@ export default function Home() {
               Siguiente
             </Button>
           </Center>
-          <Footer />
-        </Center>
+          <Hide breakpoint="(max-height: 580px)">
+            <Footer />
+          </Hide>
+        </Flex>
       )}
     </>
   );
