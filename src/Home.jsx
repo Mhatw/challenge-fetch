@@ -8,6 +8,11 @@ export default function Home() {
 
   function handlePage(number) {
     dataContext.setCurrentPage(dataContext.currentPage + number);
+    dataContext.handleData(
+      false,
+      dataContext.currentPage + number,
+      dataContext.currentPage
+    );
   }
 
   return (
