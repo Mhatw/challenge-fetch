@@ -1,4 +1,5 @@
 import { Box, Button, Center, Flex, Spinner } from "@chakra-ui/react";
+import Footer from "./components/Footer";
 import { TableData } from "./components/Table";
 import { useData } from "./context/DataContext";
 import { downloadData } from "./services/data-service";
@@ -60,6 +61,7 @@ export default function Home() {
               Siguiente
             </Button>
           </Center>
+          <Footer />
         </Center>
       )}
     </>
