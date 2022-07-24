@@ -13,7 +13,6 @@ export const DataProvider = ({ children }) => {
   async function handleData(firstRequest, page, lastPage) {
     if (firstRequest) setLoadingView(true);
     setLoading(true);
-    console.log("handleData");
     try {
       const response = await getData(page);
       response.results.sort((a, b) => a.dob.age - b.dob.age);
@@ -31,7 +30,6 @@ export const DataProvider = ({ children }) => {
       setCurrentPage(lastPage || 1);
     }
     setLoading(false);
-    console.log("handleData end");
     if (firstRequest) setLoadingView(false);
   }
 

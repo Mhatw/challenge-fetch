@@ -8,7 +8,6 @@ import {
   Avatar,
   Skeleton,
 } from "@chakra-ui/react";
-import React from "react";
 import { useData } from "../context/DataContext";
 
 export function TableData({ data }) {
@@ -17,8 +16,8 @@ export function TableData({ data }) {
       bg={"white"}
       borderRadius="0.2rem"
       minH={"309.5px"}
-      // width={["90%", "90%", "750px", "none"]}
       maxW={["90vw", "90vw", "90vw", "none"]}
+      my="1rem"
     >
       <Table size="sm" variant="striped">
         <Thead>

@@ -1,5 +1,4 @@
 import { Box, Button, Center, Flex, Spinner } from "@chakra-ui/react";
-import React from "react";
 import { TableData } from "./components/Table";
 import { useData } from "./context/DataContext";
 import { downloadData } from "./services/data-service";
@@ -28,7 +27,6 @@ export default function Home() {
           <Flex
             alignItems={"flex-end"}
             flexDirection="column"
-            gap="1rem"
             overflow={"hidden"}
           >
             <Button

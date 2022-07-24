@@ -1,4 +1,3 @@
-import "./App.css";
 import { DataProvider } from "./context/DataContext";
 import Home from "./Home";
 
