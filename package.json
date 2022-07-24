@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://randomuser.me",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -24,4 +25,5 @@
     "eslint-config-react-app": "^7.0.1",
     "vite": "^3.0.0"
   }
+  
 }
