@@ -12,3 +12,19 @@ export async function getData(page, fields) {
 
   return data;
 }
+
+export function downloadData(page) {
+  fetch(`${BASE_URL}?page=${page || 1}&results=5&seed=abc`)
+    .then(function (t) {
+      return t.blob().then((b) => {
+        let a = document.createElement("a");
+        a.href = URL.createObjectURL(b);
+        a.setAttribute("download", "users-page-" + page + ".csv");
+        a.click();
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+      alert("Error with API server, please try again");
+    });
+}
