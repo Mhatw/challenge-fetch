@@ -24,19 +24,12 @@ export default function Home() {
         </Center>
       )}
       {!dataContext.loadingView && (
-        <Center
-          // border="1px"
-          w={"100vw"}
-          h={"100vh"}
-          bg={"gray.100"}
-          flexDirection="column"
-        >
+        <Center w={"100vw"} h={"100vh"} bg={"gray.100"} flexDirection="column">
           <Flex
             alignItems={"flex-end"}
             flexDirection="column"
             gap="1rem"
             overflow={"hidden"}
-            // border="1px"
           >
             <Button
               colorScheme={"green"}

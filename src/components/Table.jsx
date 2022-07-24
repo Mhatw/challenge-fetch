@@ -13,7 +13,13 @@ import { useData } from "../context/DataContext";
 
 export function TableData({ data }) {
   return (
-    <TableContainer bg={"white"} borderRadius="0.2rem" minH={"309.5px"}>
+    <TableContainer
+      bg={"white"}
+      borderRadius="0.2rem"
+      minH={"309.5px"}
+      // width={["90%", "90%", "750px", "none"]}
+      maxW={["90vw", "90vw", "90vw", "none"]}
+    >
       <Table size="sm" variant="striped">
         <Thead>
           <Tr bg={"blue.500"}>
